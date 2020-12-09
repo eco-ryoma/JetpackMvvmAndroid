@@ -1,0 +1,5 @@
+include ':module-utils'
+include ':module-widgets'
+include ':module-res'
+include ':app'
+rootProject.name = "JetpackMvvm之玩Android"
