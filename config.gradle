@@ -1,0 +1,58 @@
+import me.akira.buildsrc.AndroidX
+import me.akira.buildsrc.Kotlin
+import me.akira.buildsrc.TestLibs
+import me.akira.buildsrc.VersionConfig
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion VersionConfig.compileSdkVersion
+    buildToolsVersion VersionConfig.buildToolsVersion
+    defaultConfig {
+        minSdkVersion VersionConfig.minSdkVersion
+        targetSdkVersion VersionConfig.targetSdkVersion
+        versionCode VersionConfig.versionCode
+        versionName VersionConfig.versionName
+        testInstrumentationRunner TestLibs.junitRunner
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            debuggable false
+        }
+        debug {
+            debuggable true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    resourcePrefix project.name + "_"
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    implementation AndroidX.core
+    implementation AndroidX.coreKtx
+    implementation AndroidX.appcompat
+    implementation Kotlin.kotlinStdlib
+    implementation Kotlin.stdlibJdk7
+    implementation Kotlin.kotlinReflect
+}
+
+repositories {
+    mavenCentral()
+}

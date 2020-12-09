@@ -11,11 +11,12 @@ package me.akira.buildsrc
  * All rights reserved.
  */
 object Kotlin {
-    private const val kotlinVersion = "1.4.10"
-    const val stdlibJdk7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
-    const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    private const val kotlinVersion = "1.4.20"
+    val kotlinStdlib = "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    val stdlibJdk7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    val kotlinReflect = "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
 
     private const val kotlinCoroutines = "1.3.8"
-    const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutines"
-    const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinCoroutines"
+    val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutines"
+    val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinCoroutines"
 }
