@@ -12,6 +12,7 @@ package me.akira.buildsrc
  */
 object Google {
     val material = "com.google.android.material:material:1.2.1"
+    // json google
     val gson = "com.google.code.gson:gson:2.8.6"
 
     val flexbox = "com.google.android:flexbox:2.0.1"
