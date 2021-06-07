@@ -25,10 +25,6 @@ class ConfigPlugin : Plugin<Project> {
             findProperty("VERSION_CODE")?.also {
                 VersionConfig.versionCode = it as Int
             }
-
-            /*configurePlugins()
-            configureAndroid()
-            configureDependencies()*/
         }
     }
 }
